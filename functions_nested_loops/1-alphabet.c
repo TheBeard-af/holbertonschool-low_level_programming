@@ -1,12 +1,17 @@
 #include "main.h"
 
 /**
- * main - description of the program
- *
- * Return: Always 0
+ * print_alphabet - print lower alphabet
  */
-int main(void)
+void print_alphabet(void)
 {
+	int i;
 
-	return (0);
+	i = 'a';
+	while (i <= 'z')
+	{
+		_putchar(i);
+		i = i + 1;
+	}
+	_putchar('\n');
 }
