@@ -9,6 +9,17 @@
       tab-width 8
       indent-tabs-mode t)
 
+;; Convert pasted leading spaces to tabs in C files
+(defun holberton-convert-spaces-to-tabs ()
+  (when (derived-mode-p 'c-mode)
+    (untabify (point-min) (point-max))
+    (tabify (point-min) (point-max))))
+
+(add-hook 'c-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode t)
+            (setq tab-width 8)))
+
 ;; Whitespace checking
 ;; Highlight tabs, trailing spaces and lines exceeding 80 columns
 (require 'whitespace)
