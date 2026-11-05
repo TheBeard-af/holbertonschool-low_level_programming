@@ -1,12 +1,24 @@
 #include "main.h"
 
 /**
- * main - description of the program
- *
- * Return: Always 0
+ * print_alphabet_x10 - print lower alphabet 10  times on 10 lines
  */
-int main(void)
+void print_alphabet_x10(void)
 {
+	int i;
+	int j;
 
-	return (0);
+	i = 'a';
+	j = 0;
+	while (j <= 9)
+	{
+		while (i <= 'z')
+		{
+			_putchar(i);
+			i = i + 1;
+		}
+		i = 'a';
+		j = j + 1;
+		_putchar('\n');
+	}
 }
