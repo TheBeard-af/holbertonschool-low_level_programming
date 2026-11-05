@@ -1,12 +1,35 @@
 #include "main.h"
 
 /**
- * main - description of the program
+ * times_table - prints the 9 times table
  *
- * Return: Always 0
+ * Return: Nothing
  */
-int main(void)
+void times_table(void)
 {
+	int row;
+	int col;
+	int result;
 
-	return (0);
+	for (row = 0; row <= 9; row++)
+	{
+		for (col = 0; col <= 9; col++)
+		{
+			result = row * col;
+
+			if (col != 0)
+			{
+				_putchar(',');
+				if (result < 10)
+					_putchar(' ');
+				_putchar(' ');
+			}
+
+			if (result >= 10)
+				_putchar((result / 10) + '0');
+
+			_putchar((result % 10) + '0');
+		}
+		_putchar('\n');
+	}
 }
