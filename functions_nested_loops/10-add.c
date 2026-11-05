@@ -1,12 +1,13 @@
 #include "main.h"
 
 /**
- * main - description of the program
+ * add - adds two integers
+ * @a: first integer
+ * @b: second integer
  *
- * Return: Always 0
+ * Return: sum of a and b
  */
-int main(void)
+int add(int a, int b)
 {
-
-	return (0);
+	return (a + b);
 }
