@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * main - chages value to 98
- *
- * Return: Always 0
+ * reset_to_98 - chages value to 98
+ * @n: address of the interger
  */
 void reset_to_98(int *n)
 {
