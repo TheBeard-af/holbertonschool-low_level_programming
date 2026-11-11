@@ -19,7 +19,11 @@ int _atoi(char *s)
 			sign *= -1;
 		else if (*s >= '0' && *s <= '9')
 		{
-			result = result * 10 + (*s - '0');
+			if (sign == -1)
+				result = result * 10 - (*s - '0');
+			else
+				result = result * 10 + (*s - '0');
+
 			started = 1;
 		}
 		else if (started)
@@ -28,5 +32,5 @@ int _atoi(char *s)
 		s++;
 	}
 
-	return (result * sign);
+	return (result);
 }
