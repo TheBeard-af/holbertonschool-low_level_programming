@@ -21,9 +21,9 @@ Run the calculator using:
 0: Quit
 
 ## Numeric Behaviour
-The calculator uses integer operands for addition, subtraction and multiplication. Division uses decimal output to support fractional results.
+The calculator uses double operands for addition, subtraction, multiplication and Division to support fractional results.
 
 ## Known Limitations
-- Menu choices must be integers.
+- Menu choices must are integers.
 - Non-numeric input is not handled.
 - Division by zero is prevented.
