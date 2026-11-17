@@ -17,18 +17,18 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
 	}
 	if (s2 == NULL)
 	{
-		return (NULL);
+		s2 = "";
 	}
 
-	while (s1[counts1] <= '\0')
+	while (s1[counts1] != '\0')
 	{
 		counts1++;
 	}
-	while (s2[counts2] <= '\0')
+	while (s2[counts2] != '\0')
 	{
 		counts2++;
 	}
@@ -40,7 +40,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	while (count <= (counts1))
+	while (count < (counts1))
 	{
 		arr[count] = s1[count];
 		count++;
