@@ -1,32 +1,37 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * create_array - makes array
- * @size: size of array
- * @c: the char
+ * alloc_grid - makes array
+ * @width: width
+ * @height: height
  * Return: pointer to array
  */
-char *create_array(unsigned int size, char c)
+int **alloc_grid(int width, int height)
 {
-	unsigned int count = 0;
-	char *arr;
+	int **alloc_grid;
+	int row = 0;
+	int col = 0;
 
-	if (size == 0)
+	if (width <= 0)
 	{
 		return (NULL);
 	}
-	arr = malloc(size * sizeof(char));
+	if (height <= 0)
+	{
+		return(NULL);
+	}
 
-	if (arr == NULL)
+	alloc_grid = malloc((width * height) * sizeof(int));
+
+	while (row <= height)
 	{
-		return (NULL);
+		while (col <= width)
+		{
+			printf("0");
+			col++;
+		}
+		col = 0;
+		row++;
 	}
-	while (count <= size)
-	{
-		arr[count] = (c);
-		count++;
-	}
-	return (arr);
 }
