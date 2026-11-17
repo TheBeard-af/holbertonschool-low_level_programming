@@ -12,7 +12,7 @@ char *_strdup(char *str)
 	char *array;
 	int index = 0;
 
-	if (str == 0)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
@@ -23,16 +23,15 @@ char *_strdup(char *str)
 	}
 
 	array = malloc((count + 1) * sizeof(char));
+	if (array == NULL)
+	{
+		return (NULL);
+	}
 
 	while (str[index] != '\0')
 	{
 		array[index] = str[index];
 		index++;
-	}
-
-	if (array == NULL)
-	{
-		return (NULL);
 	}
 
 	return (array);
