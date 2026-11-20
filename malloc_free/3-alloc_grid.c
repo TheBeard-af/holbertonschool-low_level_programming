@@ -1,4 +1,3 @@
-
 #include "main.h"
 #include <stdlib.h>
 
@@ -14,7 +13,6 @@ int **alloc_grid(int width, int height)
 	int row = 0;
 	int col = 0;
 
-	/* Check dimensions */
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
