@@ -1,32 +1,25 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * create_array - makes array
- * @size: size of array
- * @c: the char
- * Return: pointer to array
+ * free_grid - frees a 2 dimensional grid
+ * @grid: the grid to free
+ * @height: number of rows in the grid
  */
-char *create_array(unsigned int size, char c)
+void free_grid(int **grid, int height)
 {
-	unsigned int count = 0;
-	char *arr;
+	int row = 0;
 
-	if (size == 0)
+	if (grid == NULL)
 	{
-		return (NULL);
+		return;
 	}
-	arr = malloc(size * sizeof(char));
 
-	if (arr == NULL)
+	while (row < height)
 	{
-		return (NULL);
+		free(grid[row]);
+		row++;
 	}
-	while (count <= size)
-	{
-		arr[count] = (c);
-		count++;
-	}
-	return (arr);
+
+	free(grid);
 }
