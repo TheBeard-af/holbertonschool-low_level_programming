@@ -1,3 +1,4 @@
+
 #include "main.h"
 #include <stdlib.h>
 
@@ -12,31 +13,43 @@ int **alloc_grid(int width, int height)
 	int **grid;
 	int row = 0;
 	int col = 0;
-	int free_row;
 
+	/* Check dimensions */
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
+
+	/* PART 1: Allocate memory */
+
 	grid = malloc(height * sizeof(int *));
 	if (grid == NULL)
 	{
 		return (NULL);
 	}
+
+	row = 0;
 	while (row < height)
 	{
 		grid[row] = malloc(width * sizeof(int));
 		if (grid[row] == NULL)
 		{
-			free_row = 0;
-			while (free_row < row)
+			while (row > 0)
 			{
-				free(grid[free_row]);
-				free_row++;
+				row--;
+				free(grid[row]);
 			}
 			free(grid);
 			return (NULL);
 		}
+		row++;
+	}
+
+	/* PART 2: Initialise the grid */
+
+	row = 0;
+	while (row < height)
+	{
 		col = 0;
 		while (col < width)
 		{
@@ -45,5 +58,6 @@ int **alloc_grid(int width, int height)
 		}
 		row++;
 	}
+
 	return (grid);
 }
