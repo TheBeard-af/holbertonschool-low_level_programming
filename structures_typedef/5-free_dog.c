@@ -7,6 +7,9 @@
  */
 void free_dog(struct dog *d)
 {
-	/* TODO: Implement Task 5 */
-	(void)d;
+	if (d == NULL)
+		return;
+	free(d->name);
+	free(d->owner);
+	free(d);
 }
