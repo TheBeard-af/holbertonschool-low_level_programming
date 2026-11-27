@@ -1,40 +1,32 @@
 # C - Function Pointers
 
-This project explores function pointers in C and their use in selecting and
-executing functions dynamically.
+This project explores function pointers in the C programming language.
 
-## Task 3: Calculator
+## Tasks
 
-The calculator performs simple arithmetic operations:
+### Task 0 - Print name
+Prints a name using a function passed as a function pointer.
 
-- Addition (+)
-- Subtraction (-)
-- Multiplication (*)
-- Division (/)
-- Modulo (%)
+### Task 1 - Array iterator
+Executes a function on every element of an integer array.
+
+### Task 2 - Integer index
+Searches an array for an element using a comparison function and
+returns the index of the first matching element.
+
+### Task 3 - Calculator
+Uses function pointers to select arithmetic operations.
 
 ## Compilation
 
-Compile the program using:
+Compile each task with its test main file and the required source file.
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-main.c 3-op_functions.c 3-get_op_func.c -o calc
+Example:
 
-## Usage
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89
 
-./calc num1 operator num2
+## Requirements
 
-## Examples
-
-./calc 97 + 1
-
-./calc 1024 / 10
-
-./calc 1024 '*' 98
-
-./calc 1024 '%' 98
-
-## Error codes
-
-- 98: Incorrect number of arguments
-- 99: Invalid operator
-- 100: Division or modulo by zero
+- No global variables.
+- Betty coding style.
+- Function pointers are used to pass functions as arguments.
